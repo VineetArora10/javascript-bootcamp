@@ -82,3 +82,34 @@ console.log(Math.floor(Math.random() * 10) + 1); // added 1 because we have to g
 const minVal = 10;
 const maxVal = 50;
 console.log(Math.floor(Math.random() * (maxVal - minVal + 1)) + minVal);
+
+// -------------------
+// ** Date and Time **
+// -------------------
+
+let myDate = new Date();
+console.log(myDate.toString()); // "Tue Jul 22 2025 08:57:27 GMT+0530 (India Standard Time)"
+console.log(myDate.toDateString()); // "Tue Jul 22 2025"
+console.log(myDate.toISOString()); // "2025-07-22T03:27:27.918Z"
+console.log(myDate.toLocaleString()); // "22/7/2025, 8:57:27 am"
+console.log(typeof myDate); // object
+
+// let myCreatedDate = new Date(2025, 11, 25);
+// console.log(myCreatedDate.toDateString()); // "Thu Dec 25 2025"
+
+// let myCreatedDate = new Date(2025, 11, 25, 5, 3);
+// console.log(myCreatedDate.toLocaleString()); // "25/12/2025, 5:03:00 am"
+
+let myCreatedDate = new Date("12-25-2025");
+console.log(myCreatedDate.toLocaleString()); // "25/12/2025, 12:00:00 am"
+console.log(myCreatedDate.getTime()); // 1766601000000
+
+let myTimestamp = Date.now();
+console.log(myTimestamp); // 1753155441420 (this is in the format of milliseconds)
+
+console.log(Math.floor(Date.now() / 1000)); // 1753155697 (Date in seconds)
+
+let newDate = new Date();
+console.log(newDate.getMonth() + 1); // 7 (means July)
+console.log(newDate.getDay()); // 2 (means Tuesday)
+console.log(newDate.toLocaleString("default", {weekday: "long"})); // "Tuesday"
